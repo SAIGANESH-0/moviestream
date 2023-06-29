@@ -30,7 +30,7 @@ export default function Popular() {
   }, [pageid]);
 
   return (
-    <div className="text-slate-900">
+    <div className="bg-slate-900">
       {popularMovies.length > 0 ? (
         <MovieList movie={popularMovies} pageid={pageid} />
       ) : (
