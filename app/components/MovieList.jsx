@@ -4,7 +4,7 @@ import MovieCard from "./MovieCard";
 const MovieList = (props) => {
   let pagenum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   let { movie, pageid } = props;
-  if (isNaN(pageid) == true) {
+  if (isNaN(pageid) == true || pageid == 0) {
     pageid = 1;
   }
   return (
@@ -17,8 +17,8 @@ const MovieList = (props) => {
       <div className="flex justify-center flex-wrap">
         <li className="flex-row list-none my-8 pr-2">
           <Link
-            href="/movie/popular/page/[pageid]"
-            as={`/movie/popular/page/${Number(pageid) - 1}`}
+            href="/movie/popular/[pageid]"
+            as={`/movie/popular/${Number(pageid) - 1}`}
             className="rounded-md px-4 py-2 bg-zinc-800 text-gray-300 hover:opacity-70"
           >
             {`<`}
@@ -29,9 +29,13 @@ const MovieList = (props) => {
             <li key={index} className="flex-row list-none my-8 pr-2">
               <Link
                 key={index}
-                href="/movie/popular/page/[pageid]"
-                as={`/movie/popular/page/${element}`}
-                className="rounded-md px-4 py-2 bg-zinc-800 text-gray-300 hover:opacity-70"
+                href="/movie/popular/[pageid]"
+                as={`/movie/popular/${element}`}
+                className={
+                  index == pageid - 1
+                    ? "rounded-md px-4 py-2 text-zinc-800 bg-gray-300 hover:opacity-70"
+                    : "rounded-md px-4 py-2 bg-zinc-800 text-gray-300 hover:opacity-70"
+                }
               >
                 {element}
               </Link>
@@ -40,8 +44,8 @@ const MovieList = (props) => {
         })}
         <li className="flex-row list-none my-8 pr-2">
           <Link
-            href="/movie/popular/page/[pageid]"
-            as={`/movie/popular/page/${Number(pageid) + 1}`}
+            href="/movie/popular/[pageid]"
+            as={`/movie/popular/${Number(pageid) + 1}`}
             className="rounded-md px-4 py-2 bg-zinc-800 text-gray-300 hover:opacity-70"
           >
             {`>`}

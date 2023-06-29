@@ -4,7 +4,9 @@ const Header = () => {
   return (
     <header className="bg-gray-900 text-white py-4">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-xl ml-2 font-bold">Movies App</h1>
+        <Link href="/" className="text-xl ml-2 font-bold">
+          Movies App
+        </Link>
         <nav>
           <ul className="flex space-x-4">
             <li>

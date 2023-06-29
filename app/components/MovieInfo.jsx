@@ -30,35 +30,39 @@ const MovieInfo = (props) => {
             <span className="mx-2">|</span>
             <span>{genreArr.join(" , ")}</span>
           </div>
-
           <p className="text-gray-300 mt-8">{MovieDetail.overview}</p>
-          <h1 className="text-lime-400 text-center text-lg mt-4">
-            use server 3 to watch the movie without ads or redirects
-          </h1>
-          <h1 className="text-red-400 text-center text-lg mt-4">
-            click the button below if it is not working and click on any server
-          </h1>
-          <div className="flex items-center justify-center mt-4">
-            {yes ? (
-              <button
-                onClick={() => {
-                  setyes(false);
-                }}
-                className="px-4 py-2 bg-green-600 text-white rounded-md"
-              >
-                Disable Ads
-              </button>
-            ) : (
-              <button
-                onClick={() => {
-                  setyes(true);
-                }}
-                className="px-4 py-2 bg-red-600 text-white rounded-md"
-              >
-                Enable Ads
-              </button>
-            )}
-          </div>
+          {MovieDetail && (
+            <>
+              <h1 className="text-lime-400 text-center text-lg mt-4">
+                use server 3 to watch the movie without ads or redirects
+              </h1>
+              <h1 className="text-red-400 text-center text-lg mt-4">
+                click the button below if it is not working and click on any
+                server
+              </h1>
+              <div className="flex items-center justify-center mt-4">
+                {yes ? (
+                  <button
+                    onClick={() => {
+                      setyes(false);
+                    }}
+                    className="px-4 py-2 bg-green-600 text-white rounded-md"
+                  >
+                    Disable Ads
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      setyes(true);
+                    }}
+                    className="px-4 py-2 bg-red-600 text-white rounded-md"
+                  >
+                    Enable Ads
+                  </button>
+                )}
+              </div>
+            </>
+          )}
         </div>
       </div>
       <div className="pt-2 pb-8">
