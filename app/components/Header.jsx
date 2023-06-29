@@ -14,11 +14,11 @@ const Header = () => {
                 Movies
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/series" className="hover:text-gray-300">
                 Series
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link href="/search" className="hover:text-gray-300 mr-2">
                 Search
