@@ -4,7 +4,7 @@ const MovieInfo = (props) => {
   const { MovieDetail, genreArr, id } = props;
   const [yes, setyes] = useState(false);
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-black">
       <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row ">
         <div>
           <h2 className="text-4xl mt-1 md:mt-0 font-semibold text-gray-300">
@@ -33,9 +33,7 @@ const MovieInfo = (props) => {
           <p className="text-gray-300 mt-8">{MovieDetail.overview}</p>
           {MovieDetail && (
             <>
-              <h1 className="text-lime-400 text-center text-lg mt-4">
-                use server 3 to watch the movie without ads or redirects
-              </h1>
+              
               <h1 className="text-red-400 text-center text-lg mt-4">
                 click the button below if it is not working and click on any
                 server
